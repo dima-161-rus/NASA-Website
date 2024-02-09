@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root{
+  --bg-color: #fdfdfd;
+  --text-color:#333;
+  --main-color:#754ef9;
+  --white-color: #fdfdfd;
+}
+
+.quiz-wrapper{
+  width: 100%;
+  min-height: 100vh;
+  padding: 15px;
+  background: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-box{
+  width: 750px;
+  min-height: 400px;
+  background-color: var(--bg-color);
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  border-radius: 30px;
+}
+
+.question-count{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.question-count h3{
+  color: var(--main-color);
+  font-size: 3rem;
+}
+
+.question-count .count{
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--main-color);
+}
+
+.question-count .count span{
+  color: var(--text-color);
+}
+
+.question-box{
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.question-box #question-number{
+  display: flex;
+  flex-direction: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #754ef9;
+  color: var(--bg-color);
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.question-box #question{
+  font-size: 20px;
+  font-weight: 500;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 4px 12px;
+}
+
+.answers-box{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 45px;
+  gap: 35px 15px;
+}
+
+.answers-box .box{
+  width: calc(50% - 10px);
+  position: relative;
+}
+
+.answers-box .box .answer-number{
+  position: absolute;
+  top: -25px;
+  left: 5%;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--bg-color);
+  background-color: var(--main-color);
+  width: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+}
+
+.answers-box .box .answer-lable{
+  display: flex;
+  align-items: center;
+  background-color: #754ef9;
+  border: 2px solid #754ef9;
+  width: 100%;
+  color: var(--bg-color);
+  padding: 20px 25px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+.answers-box .box input:checked~.answer-lable{
+  background-color: var(--bg-color);
+  color: #754ef9;
+  border: 2px solid var(--main-color);
+}
+
+.button-box{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.button-box button{
+  width: calc(30% - 15px);
+  background-color: #754ef9;
+  border: 2px solid #754ef9;
+  padding: 12px 12px;
+  color: var(--bg-color);
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.5s;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.button-box button:hover{
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  color: var(--main-color);
+}
+
+.button-box .btn{
+  width: calc(30% - 15px);
+  background-color: #754ef9;
+  border: 2px solid #754ef9;
+  padding: 12px 12px;
+  color: var(--bg-color);
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.5s;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.button-box .btn:hover{
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  color: var(--main-color);
+}
+
+.button-box .submite-btn{
+  display: none;
+}
+
+.result-show{
+  background-color: var(--bg-color);
+  padding: 45px;
+  border-radius: 10px;
+  display: none;
+  text-align: center;
+}
+
+.result-show .btn{
+  width: calc(30% - 15px);
+  background-color: #754ef9;
+  border: 2px solid #754ef9;
+  padding: 12px 12px;
+  color: var(--bg-color);
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.5s;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.result-show .btn:hover{
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  color: var(--main-color);
+}
+
+.result-show h3{
+  font-size: 3rem;
+  color: var(--main-color);
+}
